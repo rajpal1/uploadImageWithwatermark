@@ -38,7 +38,7 @@ app.post('/upload', upload.array('images', 10), async (req, res) => {
 
       // Save the watermarked image with timestamp
       const timestamp = new Date().getTime();
-      const outputFilename = `output/watermark_${timestamp}_${image.originalname}`;
+      const outputFilename = `watermark_${timestamp}_${image.originalname}`;
       await uploadedImage.writeAsync(outputFilename);
     }
 
